@@ -117,27 +117,18 @@ let feel=T;
 
 // ===== 여름 =====
 
-if (T >= 28) {
 
-    // 실제 기온을 기준으로 증가량 계산
-    let increase =
-        (T - 28) * 0.45 +
-        (R - 40) * 0.085;
+    const heatTable = {
+    
+    if (T >= 28) {
 
-    // 고온 보정
-    if (T >= 30) increase += 0.3;
-    if (T >= 32) increase += 0.3;
-    if (T >= 34) increase += 0.4;
-    if (T >= 36) increase += 0.5;
-    if (T >= 38) increase += 0.6;
+    feel = T;
 
-    // 고습 보정
-    if (R >= 60) increase += 0.2;
-    if (R >= 70) increase += 0.3;
-    if (R >= 80) increase += 0.5;
-    if (R >= 90) increase += 0.7;
+    // 습도 영향
+    feel += (R - 40) * 0.04;
 
-    feel = T + increase;
+    // 기온 영향
+    feel += (T - 28) * 0.25;
 
 }
 
