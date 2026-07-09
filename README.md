@@ -116,10 +116,7 @@ if(isNaN(W)) W=1.5;
 let feel=T;
 
 // ===== 여름 =====
-
-
-    const heatTable = {
-    
+// ===== 한국형 체감온도 =====
     if (T >= 28) {
 
     feel = T;
